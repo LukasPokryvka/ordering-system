@@ -1,17 +1,9 @@
 pipeline {
   agent any
     
-  tools {nodejs "node"}
-    
   stages {
-        
-    stage('Build') {
-      steps {
-        sh 'npm install'
-      }
-    }  
          
-    stage('Move to Apache') {
+    stage('Build and move to Apache folder') {
       steps {
         sh 'sudo /root/./fe-admin-pipeline.sh'
       }
